@@ -6,7 +6,7 @@ const items = tree.querySelectorAll('li');
 items.forEach((li) => {
   const firstChild = li.firstChild;
 
-  if (li.children.length) {
+  if (li.children.length && firstChild.nodeType === Node.TEXT_NODE) {
     const span = document.createElement('span');
 
     span.textContent = firstChild.textContent.trim();
